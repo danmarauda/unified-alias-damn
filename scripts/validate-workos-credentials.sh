@@ -88,7 +88,7 @@ fi
 echo "🔍 Checking Convex configuration..."
 if [ -z "$NEXT_PUBLIC_CONVEX_URL" ] || [ -z "$CONVEX_DEPLOYMENT" ]; then
     echo "   ⚠️  Convex not fully configured"
-    echo "      Run: npx convex dev"
+    echo "      Run: pnpm exec convex dev"
 else
     echo "   ✅ Convex configured"
 fi
@@ -106,7 +106,7 @@ if [ $ERRORS -eq 0 ]; then
     echo "   Initiate Login URL:  ${NEXT_PUBLIC_APP_URL}/login"
     echo "   Logout Redirect:     $NEXT_PUBLIC_APP_URL"
     echo ""
-    echo "🚀 Ready to start: bun run dev"
+    echo "🚀 Ready to start: pnpm run dev"
 else
     echo "   ❌ Found $ERRORS error(s)"
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

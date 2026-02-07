@@ -279,9 +279,9 @@ echo "--------------------------------"
 read -p "Run full build? This will take time (y/N): " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    info "Running: npm run build"
+    info "Running: pnpm run build"
 
-    if npm run build 2>&1 | tee /tmp/build-output.log; then
+    if pnpm run build 2>&1 | tee /tmp/build-output.log; then
         echo -e "${GREEN}✓${NC} Build successful"
         ((CHECKS_PASSED++))
     else
@@ -292,7 +292,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         ((ERRORS++))
     fi
 else
-    info "Skipping build verification (run 'npm run build' manually)"
+    info "Skipping build verification (run 'pnpm run build' manually)"
 fi
 
 echo ""
@@ -363,6 +363,6 @@ else
     echo "  - Missing files: Review docs/MIGRATION_GUIDE.md for required files"
     echo "  - Import errors: Check that old imports are updated to WorkOS"
     echo "  - TypeScript errors: Fix type issues reported above"
-    echo "  - Missing dependencies: Run 'bun install' to update packages"
+    echo "  - Missing dependencies: Run 'pnpm install' to update packages"
     exit 1
 fi
