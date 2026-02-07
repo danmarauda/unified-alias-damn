@@ -1,0 +1,30 @@
+import withBundleAnalyzer from "@next/bundle-analyzer";
+import { nextConfig as baseConfig } from "./src/lib/config";
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  ...baseConfig,
+  
+  // Bundle analyzer configuration
+  ...(process.env.ANALYZE === "true" && {
+    webpack: (config, { isServer }) => {
+      if (!isServer) {
+        config.resolve.fallback = {
+          ...config.resolve.fallback,
+          fs: false,
+          net: false,
+          tls: false,
+        };
+      }
+      return config;
+    },
+  }),
+};
+
+// Add bundle analyzer
+if (process.env.ANALYZE === "true") {
+  const withAnalyzer = withBundleAnalyzer({ enabled: true });
+  export default withAnalyzer(nextConfig);
+} else {
+  export default nextConfig;
+}

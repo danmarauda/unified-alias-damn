@@ -1,0 +1,61 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+#                    TUPAC - TETHERED UNIFIED PROJECT AGENT CONTEXT
+# ═══════════════════════════════════════════════════════════════════════════════
+# Project: ALIAS AEOS
+# Generated: 2025-12-19
+# PARENT_LINK: ~/.ugac (Global Context Gateway)
+# TOOL_REGISTRY: ~/.uatc (Unified Agent Tool Context)
+# AEOS_VERSION: 2.0
+# JIT_PROTOCOL: 2.0
+
+ugac_integration:
+  enabled: true
+  parent: "~/.ugac"
+  tool_registry: "~/.uatc"
+  inheritance:
+    - "~/.ugac/rules/*"    # Global rules (lowest priority)
+    - "./.alias/rules/*"   # Project rules (highest priority)
+  patterns_cache: "~/.ugac/cache"
+
+meta:
+  id: "alias-aeos"
+  name: "ALIAS AEOS"
+  type: "web_app"
+  description: "Next.js + Convex + WorkOS real-time dashboard application"
+  path: "/Users/alias/Desktop/unified-alias-damn"
+  registered_at: "2025-12-19"
+
+tech_stack:
+  runtime: "Bun"
+  framework: "Next.js 16.0.10"
+  react: "19.2.0"
+  database: "Convex 1.31.2"
+  auth: "WorkOS AuthKit"
+  styling: "Tailwind CSS"
+  ui_library: "shadcn/ui (Radix UI primitives)"
+  testing: "Playwright"
+  linting: "Biome + TypeScript"
+
+commands:
+  dev: "bun dev"
+  dev_next: "bun run dev:next"
+  dev_convex: "bun run dev:convex"
+  build: "bun run build"
+  start: "bun start"
+  lint: "bun run lint"
+  format: "bun run format"
+  test: "bun test"
+
+structure:
+  router_root: "src/app"
+  components: "src/components"
+  server: "convex"
+
+jit_protocol:
+  enabled: true
+  version: "2.0"
+  local_paths:
+    tools: ".alias/tools"
+    rules: ".alias/rules"
+    schemas: ".alias/schemas"
+    modes: ".alias/modes"

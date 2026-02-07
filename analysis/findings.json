@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "generated": "2025-11-27",
+    "turn": 0,
+    "mode": "Transform",
+    "riskTolerance": "Medium",
+    "fixesApplied": true,
+    "fixSummary": {
+      "designSystem": {
+        "formattersCreated": "src/lib/formatters.ts",
+        "statusBadgeExtracted": "src/components/ui/status-badge.tsx",
+        "chartsCreated": ["src/components/charts/LineChart.tsx", "src/components/charts/PieChart.tsx", "src/components/charts/index.ts"]
+      },
+      "typeSafety": {
+        "schemaFixed": "convex/schema.ts - v.any() replaced with typed validators",
+        "observabilityFixed": "convex/observability.ts - added type-safe validators and removed non-null assertions"
+      },
+      "componentDecomposition": {
+        "agentMetricsRefactored": "src/app/agents/metrics/page.tsx - inline charts replaced with shared components"
+      },
+      "codeQuality": {
+        "useAuthFixed": "src/lib/hooks/use-auth.ts - implemented WorkOS sign-out flow"
+      },
+      "performance": {
+        "globeLazyLoaded": "Already implemented in LiveFeed.tsx and activities/page.tsx",
+        "getFilterOptionsOptimized": "convex/observability.ts - uses static enum values + limited session sampling"
+      }
+    }
+  },
+  "autoDetectedVariables": {
+    "STACK_TARGET": "TypeScript, Bun 1.0+, Next.js 16.0.3, React 19, Convex 1.29, WorkOS AuthKit",
+    "PACKAGE_MANAGER": "bun",
+    "UX_AXIS": "UX-first",
+    "AI_STACK": "AI SDK v6 (15 providers)",
+    "NODE_VERSION": "not-specified"
+  },
+  "codebaseMetrics": {
+    "totalFiles": 101,
+    "totalLinesOfCode": 19118,
+    "appRouterPages": 27,
+    "components": 40,
+    "convexTables": 16,
+    "convexFunctions": 54,
+    "aiProviders": 15,
+    "playwrightTests": 7
+  },
+  "criticalHotspots": [
+    {
+      "id": "HS-001",
+      "file": "src/app/deploy/page.tsx",
+      "lines": 1007,
+      "severity": "CRITICAL",
+      "issue": "Monolithic page component mixing UI, state, and business logic",
+      "evidence": "src/app/deploy/page.tsx:1-1007",
+      "recommendation": "Extract to DeployPage, DeployPipeline, DeployConfig, DeployHistory components",
+      "targetLOC": 200
+    },
+    {
+      "id": "HS-002",
+      "file": "src/app/agents/designer/page.tsx",
+      "lines": 940,
+      "severity": "CRITICAL",
+      "issue": "Agent configuration form spans entire file with inline components",
+      "evidence": "src/app/agents/designer/page.tsx:1-940",
+      "recommendation": "Extract AgentConfigForm, CodePreview, AgentTemplates components",
+      "targetLOC": 250
+    },
+    {
+      "id": "HS-003",
+      "file": "src/app/projects/[id]/page.tsx",
+      "lines": 893,
+      "severity": "CRITICAL",
+      "issue": "Project details, timeline, team, and settings in single file",
+      "evidence": "src/app/projects/[id]/page.tsx:1-893",
+      "recommendation": "Extract tab content to ProjectHeader, ProjectTimeline, ProjectTeam, ProjectSettings",
+      "targetLOC": 200
+    },
+    {
+      "id": "HS-004",
+      "file": "src/app/ontology/page.tsx",
+      "lines": 790,
+      "severity": "HIGH",
+      "issue": "Dual visualizer modes with inline toolbar and controls",
+      "evidence": "src/app/ontology/page.tsx:1-790",
+      "recommendation": "Extract OntologyToolbar, EntityCreator, OntologyFilters",
+      "targetLOC": 300
+    },
+    {
+      "id": "HS-005",
+      "file": "src/app/agents/metrics/page.tsx",
+      "lines": 768,
+      "severity": "HIGH",
+      "issue": "Custom chart components and helpers inline",
+      "evidence": "src/app/agents/metrics/page.tsx:1-768",
+      "recommendation": "Extract chart components to /components/charts/, StatusBadge to /components/ui/",
+      "targetLOC": 400
+    }
+  ],
+  "typeSafetyIssues": [
+    {
+      "id": "TS-001",
+      "file": "convex/schema.ts",
+      "line": 89,
+      "issue": "v.any() used for agentMetrics.data",
+      "risk": "Type safety bypassed, runtime errors possible",
+      "recommendation": "Define discriminated union for metric data types"
+    },
+    {
+      "id": "TS-002",
+      "file": "convex/schema.ts",
+      "line": 317,
+      "issue": "v.any() used for observabilityEvents.payload",
+      "risk": "Flexible but untyped event payloads",
+      "recommendation": "Create typed payload interfaces per event type"
+    },
+    {
+      "id": "TS-003",
+      "file": "convex/schema.ts",
+      "line": 327,
+      "issue": "v.any() used for observabilityEvents.metadata",
+      "risk": "Unstructured metadata",
+      "recommendation": "Replace with v.union() of known shapes"
+    }
+  ],
+  "accessibilityDebt": {
+    "disabledRules": 15,
+    "evidence": "biome.json:43-61",
+    "rules": [
+      "noAutofocus", "noDistractingElements", "noHeaderScope",
+      "noInteractiveElementToNoninteractiveRole", "noLabelWithoutControl",
+      "noNoninteractiveElementToInteractiveRole", "noNoninteractiveTabindex",
+      "noPositiveTabindex", "noRedundantAlt", "noRedundantRoles",
+      "noSvgWithoutTitle", "useAltText", "useKeyWithClickEvents",
+      "useKeyWithMouseEvents", "useButtonType"
+    ],
+    "recommendation": "Progressive enablement starting with useAltText, useButtonType"
+  },
+  "todoMarkers": [
+    {
+      "file": "src/lib/hooks/use-auth.ts",
+      "line": 1,
+      "content": "TODO: integrate WorkOS sign-out flow when available"
+    }
+  ],
+  "circularDependencies": [],
+  "deadCode": [],
+  "securityIssues": [],
+  "performanceIssues": [
+    {
+      "id": "PERF-001",
+      "type": "bundle-size",
+      "issue": "Three.js imported for globe component",
+      "evidence": "src/components/ui/globe/Globe.tsx",
+      "recommendation": "Lazy load Globe component with next/dynamic"
+    },
+    {
+      "id": "PERF-002",
+      "type": "query-optimization",
+      "issue": "getFilterOptions queries 1000 events without pagination",
+      "evidence": "convex/observability.ts:253",
+      "recommendation": "Add pagination or use aggregation"
+    }
+  ],
+  "aiCapabilities": {
+    "providers": ["openai", "anthropic", "google", "cerebras", "groq", "mistral", "deepseek", "cohere", "fireworks", "togetherai", "perplexity", "xai", "azure", "bedrock", "vertex"],
+    "agents": 27,
+    "squadrons": 3,
+    "neurons": 35,
+    "toolSchemas": "not-formalized",
+    "retrievalPipeline": "not-implemented",
+    "evalFramework": "not-implemented"
+  }
+}
+

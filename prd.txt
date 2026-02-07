@@ -1,0 +1,198 @@
+# ALIAS MOSAIC - Product Requirements Document
+# AI-Augmented, Ontology-Driven Software Development Framework
+# Generated: 2025-11-27 | Turn 0 - Forensic Analysis
+
+================================================================================
+TITLE
+================================================================================
+ALIAS MOSAIC Platform - S-Tier AI-Native TypeScript Transformation
+
+================================================================================
+VISION
+================================================================================
+Transform ALIAS MOSAIC into an S-Tier AI-native platform that orchestrates 27 AI
+agents across 3 squadrons, enabling ontology-driven software development with
+real-time observability, enterprise authentication, and multi-LLM intelligence.
+
+================================================================================
+GOALS AND KPIs
+================================================================================
+[P0] Core Platform Stability
+  - P95 page-interactive ≤ 2.5s (current: ~3.2s estimated)
+  - API P95 ≤ 200ms (Convex functions optimized)
+  - 99.9% uptime target
+  - Zero authentication failures
+
+[P1] AI-Native Capabilities
+  - 15+ LLM provider integration (current: 15 providers)
+  - 35 UCE neural network neurons active
+  - Agent cost tracking per session
+
+[P2] Developer Experience
+  - <5 minute local dev setup
+  - TypeScript strict mode: ENABLED
+  - Biome lint/format: ENABLED
+
+================================================================================
+USERS AND JTBD
+================================================================================
+1. Platform Engineers
+   JTBD: Deploy AI agents at scale with observability
+   Success: Monitor agent performance, track costs, debug failures
+
+2. Software Architects
+   JTBD: Define ontologies and domain models visually
+   Success: Collaborative editing, version control, export to code
+
+3. Project Managers
+   JTBD: Track multi-agent project execution
+   Success: Real-time dashboards, client research workflow
+
+4. Researchers/Analysts
+   JTBD: Manage client research with QA workflow
+   Success: Draft → Approval → Published pipeline
+
+================================================================================
+SCOPE (IN)
+================================================================================
+✓ 27 AI agents across 3 squadrons (Data, Knowledge, Validation)
+✓ 35 UCE neural network neurons
+✓ WorkOS enterprise authentication (SSO/SAML/MFA)
+✓ Convex real-time database (16 tables, 54+ functions)
+✓ Multi-LLM integration (15 providers via AI SDK v6)
+✓ Skills management system (Skill Seeker)
+✓ Client research workflow (multi-stage approval)
+✓ 3D globe visualization (Three.js + React Three Fiber)
+✓ Observability dashboard (cost tracking, event timeline)
+
+================================================================================
+SCOPE (OUT)
+================================================================================
+✗ Mobile native apps (web-only for now)
+✗ Offline mode
+✗ Multi-tenant isolation (single org deployment)
+✗ Custom LLM fine-tuning UI
+
+================================================================================
+NON-FUNCTIONALS AND GUARDRAILS
+================================================================================
+Performance:
+  - P95 page load: ≤2.5s
+  - P95 API latency: ≤200ms
+  - Bundle size budget: <500KB initial JS
+
+Security:
+  - OWASP ASVS Level 2 posture
+  - GDPR/SOC2 compliance ready
+  - No secrets in client code
+  - WorkOS enterprise-grade auth
+
+Accessibility:
+  - WCAG 2.2 AA target
+  - Dark mode support (implemented)
+  - Responsive design (implemented)
+
+================================================================================
+ARCHITECTURE OVERVIEW
+================================================================================
+CURRENT STATE (v0.1.0):
+┌─────────────────────────────────────────────────────────────────┐
+│                        Next.js 16.0.3 App                       │
+│                   (Turbopack + App Router)                      │
+├─────────────────────────────────────────────────────────────────┤
+│  /src/app/         │  /src/components/  │  /src/lib/           │
+│  27 pages          │  40+ components    │  hooks, utils        │
+├─────────────────────────────────────────────────────────────────┤
+│              WorkOS AuthKit (SSO/SAML/MFA)                      │
+├─────────────────────────────────────────────────────────────────┤
+│                     Convex 1.29.3                               │
+│  16 tables | 54 functions | Real-time subscriptions            │
+├─────────────────────────────────────────────────────────────────┤
+│                  AI SDK v6 (15 providers)                       │
+│  OpenAI | Anthropic | Google | Cerebras | Groq | +10 more      │
+└─────────────────────────────────────────────────────────────────┘
+
+TARGET STATE (v1.0.0):
+┌─────────────────────────────────────────────────────────────────┐
+│                    Design System Layer                          │
+│  Atomic Design | Token System | Dark/Light | i18n ready         │
+├─────────────────────────────────────────────────────────────────┤
+│                    Feature Domains                              │
+│  Agents │ Projects │ Ontology │ Research │ Skills │ Observe     │
+├─────────────────────────────────────────────────────────────────┤
+│                    Shared Infrastructure                        │
+│  Auth │ API │ State │ Routing │ Telemetry │ Error Boundary      │
+├─────────────────────────────────────────────────────────────────┤
+│                   AI Orchestration Layer                        │
+│  Tool Schemas │ Retrieval │ Evals │ Cost Management             │
+├─────────────────────────────────────────────────────────────────┤
+│                    Data Platform                                │
+│  Convex (RT) │ Caching │ Optimistic Updates │ Offline Queue     │
+└─────────────────────────────────────────────────────────────────┘
+
+================================================================================
+DATA MODEL AND CONTRACTS (HIGH LEVEL)
+================================================================================
+Core Entities (Convex Schema):
+  - users: WorkOS-synced user profiles
+  - clientProfiles: Client management with full-text search
+  - clientResearch: Multi-stage approval workflow
+  - skills/skillVersions: Skill library with versioning
+  - observabilityEvents: Event stream for agent tracking
+  - uceNeuralActivations: 35-neuron network state
+  - squadronStatus: 3 squadrons × 9 agents
+
+API Surface:
+  - Convex mutations/queries (54 functions)
+  - HTTP endpoints (/api/observability/*)
+  - Next.js API routes (/api/ai-demo/*, /api/auth/*)
+
+================================================================================
+RISKS AND MITIGATIONS
+================================================================================
+| Risk | Impact | Likelihood | Mitigation |
+|------|--------|------------|------------|
+| Large page components (1000+ LOC) | High | Confirmed | Atomic decomposition |
+| No automated test suite | High | Confirmed | Vitest + Playwright setup |
+| Relaxed a11y rules in Biome | Medium | Confirmed | Progressive enablement |
+| WorkOS dependency for auth | Medium | Low | Abstract auth layer |
+| AI SDK beta (v6) | Medium | Medium | Pin versions, monitor |
+
+================================================================================
+RELEASE PLAN AND MILESTONES
+================================================================================
+M0: Foundation (Turn 0-2)
+  - Forensic analysis complete ✓
+  - Design system tokens defined
+  - Component decomposition started
+
+M1: Design System (Turn 3-5)
+  - Atomic components extracted
+  - Token system implemented
+  - Accessibility improvements
+
+M2: AI Enhancement (Turn 6-8)
+  - Tool schemas formalized
+  - Retrieval pipelines optimized
+  - Eval framework established
+
+M3: Production Hardening (Turn 9-10)
+  - Test coverage >70%
+  - Performance budgets met
+  - Security audit passed
+
+================================================================================
+OPEN QUESTIONS AND ASSUMPTIONS
+================================================================================
+Questions:
+  1. What is the target test coverage percentage?
+  2. Are there specific compliance requirements (SOC2, HIPAA)?
+  3. What is the expected concurrent user load?
+  4. Should skills be shareable across organizations?
+
+Assumptions:
+  - Single-organization deployment (no multi-tenancy)
+  - English-only UI (i18n ready but not implemented)
+  - Browser support: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
+  - Convex will remain the primary database
+

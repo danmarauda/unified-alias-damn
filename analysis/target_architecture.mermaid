@@ -1,0 +1,152 @@
+%% ALIAS MOSAIC - Target S-Tier Architecture
+%% Generated: 2025-11-27 | Turn 0 - Forensic Analysis
+%% Vision: AI-Native Platform with Enterprise-Grade Foundations
+
+graph TB
+    subgraph Clients["Client Layer"]
+        Browser["Web Browser"]
+        CLI["CLI Tools"]
+        API["External APIs"]
+    end
+
+    subgraph Edge["Edge Layer"]
+        CDN["CDN<br/>(Vercel/Cloudflare)"]
+        WAF["WAF + Rate Limiting"]
+    end
+
+    subgraph Presentation["Presentation Layer"]
+        subgraph DesignSystem["Design System"]
+            Tokens["Design Tokens<br/>colors, spacing, typography"]
+            Atoms["Atoms<br/>Button, Input, Badge"]
+            Molecules["Molecules<br/>Card, FormField, StatusBadge"]
+            Organisms["Organisms<br/>Header, DataTable, ChartPanel"]
+        end
+        
+        subgraph Pages["Feature Pages (<300 LOC each)"]
+            Dashboard["Dashboard"]
+            Agents["Agents"]
+            Projects["Projects"]
+            Ontology["Ontology"]
+            Research["Research"]
+            Skills["Skills"]
+            Observability["Observability"]
+        end
+
+        subgraph SharedUI["Shared UI Infrastructure"]
+            ErrorBoundary["Error Boundaries"]
+            Loading["Loading States"]
+            A11y["Accessibility Layer"]
+            I18n["i18n Ready"]
+        end
+    end
+
+    subgraph Application["Application Layer"]
+        subgraph StateManagement["State Management"]
+            ConvexHooks["Convex Hooks<br/>(Real-time)"]
+            LocalState["Local State<br/>(useState/useReducer)"]
+            URLState["URL State<br/>(searchParams)"]
+        end
+
+        subgraph Hooks["Custom Hooks"]
+            UseAuth["useAuth"]
+            UseAgentMetrics["useAgentMetrics"]
+            UseObservability["useObservability"]
+            UseSkills["useSkills"]
+        end
+
+        subgraph Services["Service Layer"]
+            AuthService["Auth Service"]
+            AgentService["Agent Service"]
+            ProjectService["Project Service"]
+            ResearchService["Research Service"]
+        end
+    end
+
+    subgraph AI["AI Orchestration Layer"]
+        subgraph AgentFramework["Agent Framework"]
+            ToolSchemas["Tool Schemas<br/>(Zod + AI SDK)"]
+            AgentRegistry["Agent Registry<br/>(27 agents)"]
+            SquadronCoord["Squadron Coordinator"]
+        end
+
+        subgraph LLMLayer["LLM Abstraction"]
+            ProviderRouter["Provider Router"]
+            CostManager["Cost Manager"]
+            RetryPolicy["Retry + Fallback"]
+        end
+
+        subgraph RAG["Retrieval Layer"]
+            VectorStore["Vector Store"]
+            EmbeddingPipeline["Embedding Pipeline"]
+            ChunkStrategy["Chunk Strategy"]
+        end
+
+        subgraph Evals["Eval Framework"]
+            Metrics["Metrics Collection"]
+            Baselines["Baselines"]
+            Regression["Regression Detection"]
+        end
+    end
+
+    subgraph Backend["Backend Layer"]
+        subgraph ConvexFunctions["Convex Functions"]
+            Queries["Queries<br/>(typed returns)"]
+            Mutations["Mutations<br/>(validated inputs)"]
+            Actions["Actions<br/>(external calls)"]
+            HTTPRoutes["HTTP Routes"]
+        end
+
+        subgraph DataLayer["Data Layer"]
+            Schema["Schema<br/>(16 tables)"]
+            Indexes["Indexes"]
+            Validators["Validators<br/>(no v.any)"]
+        end
+
+        subgraph Observability["Observability Backend"]
+            EventStore["Event Store"]
+            NeuralState["Neural State"]
+            SquadronState["Squadron State"]
+        end
+    end
+
+    subgraph External["External Services"]
+        WorkOS["WorkOS<br/>Enterprise Auth"]
+        AIProviders["AI Providers<br/>(15+)"]
+        ConvexCloud["Convex Cloud"]
+        Analytics["Analytics"]
+    end
+
+    %% Flow
+    Browser --> CDN
+    CDN --> WAF
+    WAF --> Presentation
+
+    Presentation --> Application
+    Application --> AI
+    Application --> Backend
+
+    AI --> LLMLayer
+    LLMLayer --> AIProviders
+
+    Backend --> ConvexCloud
+    AuthService --> WorkOS
+
+    %% Design System Flow
+    Tokens --> Atoms
+    Atoms --> Molecules
+    Molecules --> Organisms
+    Organisms --> Pages
+
+    %% Styling
+    classDef layer fill:#f8f9fa,stroke:#333
+    classDef core fill:#3060D1,stroke:#333,color:#fff
+    classDef ai fill:#50C878,stroke:#333,color:#fff
+    classDef external fill:#95afc0,stroke:#333
+    classDef design fill:#F9A826,stroke:#333
+
+    class Presentation,Application,Backend layer
+    class ConvexFunctions,StateManagement core
+    class AI,AgentFramework,LLMLayer,RAG,Evals ai
+    class External,WorkOS,AIProviders,ConvexCloud external
+    class DesignSystem,Tokens,Atoms,Molecules,Organisms design
+

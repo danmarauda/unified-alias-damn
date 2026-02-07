@@ -1,0 +1,578 @@
+---
+# ALIAS Master Knowledge Representation - YAML Format
+# Version: 1.0
+# Date: 2025-08-04
+# Purpose: Machine-readable knowledge base for ALIAS ecosystem
+
+organization:
+  company:
+    legal_name: ALIAS Pty Ltd
+    headquarters: Melbourne, Australia
+    founded: 2024
+    founder: Dan Humphreys
+    mission: "Coordinate people + agents in delivering friction-free, high-impact AI solutions—faster, cleaner, zero bullshit"
+    tagline: "AI done right, zero BS"
+    
+  divisions:
+    - name: ALIAS
+      focus: Consulting, software engineering, creative work
+      scope: Client-facing delivery and solutions
+    - name: ALIAS Labs
+      focus: AI/ML engineering & R&D
+      scope: Innovation and technology advancement
+      
+  core_principles:
+    - Client-Centricity: Every decision optimized for client value
+    - AI-Agent-First: Humans focus on strategy, AI handles execution
+    - Modular & Scalable: Systems that grow with organizational needs
+    - Radical Candour: Transparent, honest communication
+    - Continuous Optimization: Never-ending improvement cycles
+
+technology_infrastructure:
+  development_stack:
+    frontend:
+      - Next.js 15
+      - React 19
+      - Tailwind CSS 4.0
+      - ShadCN UI
+      - HeroUI
+    backend:
+      - Convex DB
+      - Hono API
+      - Vite toolchain
+      - tRPC
+    authentication:
+      - Better-Auth
+      - Clerk integration
+    deployment:
+      - Vercel
+      - Cloudflare Pages
+      - Cloudflare Workers
+    mobile:
+      - React Native Expo
+      - Swift/SwiftUI (Apple ecosystem)
+    realtime:
+      - LiveKit for voice/video
+    version_control:
+      - GitLab 18 (self-hosted)
+      - CI/CD pipelines
+      - GitLab Duo AI
+      
+  infrastructure:
+    core_server:
+      type: Proxmox VE 8.4
+      hostname: pve.aliaslabs.local
+      ip: 192.168.1.100
+      specs:
+        cpu: Intel i7-14700F
+        ram: 128GB
+        storage: Multiple SSDs
+    network:
+      vpn: Tailscale mesh
+      router: Netgear Nighthawk RS700
+      domains:
+        - alias.com.ai
+        - aliaslabs.ai
+      dns: Cloudflare
+    security:
+      monitoring: Wazuh SIEM
+      firewall:
+        - Fail2Ban
+        - UFW
+      ssh_port: 2222
+      auth: SSH keys only
+      target_score: 10/10 by Q4 2025
+      
+  ai_integration:
+    models:
+      primary: Claude 3.5 Sonnet
+      secondary:
+        - GPT-4
+        - Gemini 2.5 Pro
+    protocols:
+      - MCP (Model Context Protocol)
+    tools:
+      - Factory.ai
+      - Linear
+      - Eververse
+    voice: ElevenLabs integration
+
+mosaic_framework:
+  meta:
+    name: MOSAIC
+    full_name: Meta-Orchestration System for AI-Integrated Collaboration
+    type: Universal Organizational Operating System
+    scalability: Solo founder to enterprise
+    core_concept: Life-work synthesis through intelligent orchestration
+    
+  lifecycles:
+    - id: apex-lc
+      name: APEX-LC
+      full_name: Autonomous Persona-Enhanced eXecution
+      domain: Software development, deployment, technical execution
+      mission: Idea to Production pipeline in <8 hours
+      status: Core implementation complete
+      features:
+        ai_personas:
+          - Analyst
+          - Product Lead
+          - Architect
+          - Developer
+        pipeline_phases:
+          - Discovery (30 minutes)
+          - Architecture (45 minutes)
+          - Development (4-5 hours)
+          - Testing (1 hour)
+          - Deployment (1 hour)
+        performance_targets:
+          total_hours: 8
+          deployment_success_rate: 0.95
+          
+    - id: prism-lc
+      name: PRISM-LC
+      full_name: Pattern Recognition & Intelligent Semantic Management
+      domain: Knowledge management, documentation, organizational memory
+      mission: Capture, index, and retrieve all organizational knowledge
+      capabilities:
+        - Semantic knowledge graphs
+        - Automated documentation generation
+        - Vector-based search across all content
+        - Pattern recognition and insight generation
+        - Meeting transcription and decision logging
+      data_architecture:
+        - Vector embeddings for semantic search
+        - Knowledge graph with entity relationships
+        - Automated content categorization
+        - Version-controlled documentation
+        
+    - id: aurora-lc
+      name: AURORA-LC
+      full_name: Autonomous Relationship & User-Oriented Response Architecture
+      domain: Customer lifecycle, relationships, experience management
+      mission: Predictive customer success and automated relationship nurturing
+      features:
+        - Customer journey orchestration
+        - Predictive churn prevention (>85% accuracy)
+        - Automated communication workflows
+        - Relationship intelligence and insights
+        - Multi-channel engagement optimization
+      success_metrics:
+        customer_satisfaction: 4.5/5
+        response_time_hours: 2
+        churn_prediction_accuracy: 0.85
+        
+    - id: nexus-lc
+      name: NEXUS-LC
+      full_name: Network Enhancement & eXpertise Unification System
+      domain: Talent development, personal growth, skill optimization
+      mission: Continuous learning and capability enhancement
+      capabilities:
+        - Skill gap analysis and development planning
+        - Learning resource curation and delivery
+        - Performance optimization and coaching
+        - Network expansion and relationship building
+        - Career progression tracking
+        
+    - id: flux-lc
+      name: FLUX-LC
+      full_name: Fluid Logic & Universal eXchange
+      domain: Data operations, infrastructure, system integration
+      mission: Real-time data flows and infrastructure orchestration
+      architecture:
+        event_bus: Apache Kafka
+        context_store:
+          - Redis Cluster
+          - PostgreSQL
+        schema_registry: Event validation
+        api: GraphQL with subscriptions
+        sync: Real-time across all systems
+        
+    - id: spark-lc
+      name: SPARK-LC
+      full_name: Strategic Planning & Adaptive Research Kernel
+      domain: Innovation, R&D, strategic experimentation
+      mission: Hypothesis-driven innovation and market exploration
+      features:
+        - Innovation pipeline management
+        - Market research and validation
+        - Experiment design and execution
+        - Strategic opportunity identification
+        - Competitive analysis automation
+        
+    - id: shield-lc
+      name: SHIELD-LC
+      full_name: Security, Health, Infrastructure, Enforcement & Legal Defense
+      domain: Security, compliance, risk management, legal protection
+      mission: Zero-trust security and proactive risk mitigation
+      capabilities:
+        - Continuous security monitoring
+        - Compliance automation (GDPR, CCPA, HIPAA)
+        - Risk assessment and mitigation
+        - Legal document management
+        - Incident response automation
+        
+    - id: quantum-lc
+      name: QUANTUM-LC
+      full_name: Quality-driven Universal Asset & Net-worth Transformation
+      domain: Financial operations, wealth optimization, resource allocation
+      mission: Automated financial management and wealth building
+      features:
+        - Financial planning and optimization
+        - Automated accounting and reporting
+        - Investment management and analysis
+        - Resource allocation and budgeting
+        - Tax optimization strategies
+        
+    - id: echo-lc
+      name: ECHO-LC
+      full_name: Engagement, Content, & Holistic Outreach
+      domain: Content creation, marketing, brand amplification
+      mission: Multi-modal content generation and brand consistency
+      capabilities:
+        - Content strategy and creation
+        - Brand management and consistency
+        - Multi-channel distribution optimization
+        - Audience engagement and growth
+        - Performance analytics and optimization
+        
+    - id: pulse-lc
+      name: PULSE-LC
+      full_name: Performance Unification & Lifecycle Synchronization Engine
+      domain: Meta-orchestration, system coordination, performance optimization
+      mission: System-wide coordination and optimization
+      core_functions:
+        - Cross-lifecycle coordination
+        - Resource allocation optimization
+        - Performance monitoring and analytics
+        - Bottleneck identification and resolution
+        - System health and reliability management
+        
+    - id: flow-lc
+      name: FLOW-LC
+      full_name: Focused Lifestyle & Optimal Workflow
+      domain: Lifestyle integration, context management, personal optimization
+      mission: Life-work synthesis and contextual decision making
+      features:
+        - Context-aware scheduling and prioritization
+        - Energy and attention optimization
+        - Lifestyle integration and balance
+        - Personal productivity and well-being management
+        - Work-life synthesis orchestration
+
+life_work_synthesis:
+  concept: Beyond work-life balance to complete integration
+  implementation: Home Assistant OS as ambient intelligence layer
+  
+  ambient_intelligence:
+    living_spaces:
+      - Smart displays showing family schedules and priorities
+      - Ambient lighting reflecting energy and focus needs
+      - Climate optimization for productivity and comfort
+      - Voice interaction with MOSAIC context
+    work_integration:
+      - Meeting preparation with context pre-loading
+      - Focus time protection and optimization
+      - Seamless transition between work and personal modes
+      - Real-time collaboration support
+    personal_optimization:
+      - Health and wellness monitoring
+      - Energy level tracking and optimization
+      - Sleep quality improvement
+      - Family time protection and enhancement
+      
+  context_delivery_examples:
+    morning: "Good morning! Today's priority: Client demo at 2 PM. Demo prep materials ready."
+    evening: "Welcome home! Sarah has soccer practice at 7. Dinner ready in 15 minutes."
+    focus: "Entering deep focus mode. Work notifications silenced, optimal environment set."
+
+value_optimization:
+  dimensions:
+    business:
+      - Revenue generation potential
+      - Cost reduction opportunities
+      - Profit margin improvement
+      - Operational efficiency gains
+    personal:
+      - Life satisfaction and fulfillment
+      - Growth and development
+      - Relationship quality
+      - Health and wellbeing
+    strategic:
+      - Leverage potential (1x to 10,000x impact)
+      - Optionality creation
+      - Sustainability and longevity
+      - Learning and adaptation
+    social:
+      - Community impact
+      - Social contribution
+      - Legacy building
+      - Environmental responsibility
+      
+  decision_optimization:
+    methods:
+      - Multi-criteria decision analysis
+      - Pareto frontier analysis
+      - Risk-adjusted value assessment
+      - Long-term value projection
+
+technical_architecture:
+  universal_context_engine:
+    purpose: Process all organizational data for real-time actionable context
+    capabilities:
+      - Data synthesis from multiple sources
+      - Predictive context modeling
+      - Real-time decision support
+      - Cross-platform context delivery
+      
+  event_driven_architecture:
+    event_bus:
+      technology: Apache Kafka
+      topics:
+        - mosaic.lifecycle.events
+        - mosaic.system.health
+        - mosaic.user.actions
+        - mosaic.deployment.events
+    context_store:
+      technologies:
+        - Redis Cluster
+        - PostgreSQL
+      features:
+        - Real-time synchronization
+        - Version control
+        - Multi-tenant isolation
+      api: GraphQL with real-time subscriptions
+    schema_registry:
+      purpose: Event schema validation and evolution
+      features:
+        - Avro schemas
+        - Backward compatibility
+        - Version management
+        
+  cross_platform:
+    framework: ReNative
+    coverage:
+      mobile:
+        - iOS
+        - iPadOS
+        - Android
+      desktop:
+        - macOS
+        - Windows
+        - Linux
+      tv:
+        - Apple TV
+        - Android TV
+        - Fire TV
+        - webOS
+        - Tizen TV
+        - Chromecast
+      wearables:
+        - Apple Watch
+        - Android Wear
+        - Tizen Watch
+      emerging:
+        - KaiOS
+        - WebTV platforms
+    apple_ecosystem:
+      ios_ipados:
+        - Native widgets
+        - Shortcuts integration
+        - Push notifications
+      apple_watch:
+        - Complications
+        - Health integration
+        - Quick actions
+      apple_tv:
+        - Living room dashboard
+        - Family coordination
+      macos:
+        - Menu bar status
+        - Desktop notifications
+        - Shortcuts
+      vision_pro:
+        - Spatial computing
+        - 3D context visualization
+      carplay_ultra:
+        - Driving context optimization
+        - Hands-free interaction
+
+implementation_status:
+  phase_1:
+    name: Foundation
+    status: Complete
+    completed:
+      infrastructure:
+        - Event bus (Kafka) implementation
+        - Context store (Redis + PostgreSQL)
+        - Schema registry setup
+        - CLI tools development
+        - Basic integration testing
+      core_lifecycles:
+        - APEX-LC: Software development pipeline
+        - PRISM-LC: Knowledge management foundation
+        - PULSE-LC: System coordination
+        - Basic cross-lifecycle communication
+        
+  phase_2:
+    name: Extended Implementation
+    status: In Progress
+    in_progress:
+      additional_lifecycles:
+        - AURORA-LC: Customer success automation
+        - QUANTUM-LC: Financial optimization
+        - SHIELD-LC: Security and compliance
+        - FLUX-LC: Data operations
+      integrations:
+        - Home Assistant OS deep integration
+        - Apple ecosystem optimization
+        - Cross-platform ReNative deployment
+        
+  phase_3:
+    name: Advanced Features
+    status: Planned
+    planned:
+      ai_enhancement:
+        - Advanced persona coordination
+        - Multi-model AI orchestration
+        - Predictive analytics deployment
+        - Automated workflow optimization
+      life_work_synthesis:
+        - Complete ambient intelligence
+        - Contextual information delivery
+        - Personal optimization automation
+        - Family and lifestyle integration
+
+business_model:
+  current_projects_q2_2025:
+    ask_ara:
+      client: ARA Group
+      description: Voice-first FM assistant
+    bid_team_service:
+      client: ARA Property Services
+      description: Multi-agent tender platform
+    combat_mirror:
+      type: Research
+      description: AI vision research project
+    consulting:
+      type: Various
+      description: AI solutions delivery
+      
+  revenue_streams:
+    - stream: Consulting
+      description: High-value AI solution consulting
+    - stream: Product Development
+      description: Custom AI system development
+    - stream: MOSAIC Licensing
+      description: Framework licensing for enterprises
+    - stream: Training & Support
+      description: MOSAIC implementation services
+      
+  market_differentiation:
+    unique_value_propositions:
+      - Life-Work Synthesis: Beyond work-life balance to true integration
+      - Universal Scalability: Solo founder to enterprise in one framework
+      - Context-Aware Intelligence: Right information, right time, right person
+      - Leverage Multiplication: 1x to 10,000x impact potential
+      - Ambient Intelligence: Technology that disappears into the background
+    competitive_advantages:
+      - Comprehensive 11-lifecycle approach
+      - Deep Apple ecosystem integration
+      - Home Assistant OS physical interface layer
+      - Multi-dimensional value optimization
+      - Real-time cross-platform synchronization
+
+success_metrics:
+  operational_excellence:
+    idea_to_production_hours: 8
+    first_time_deployment_success: 0.95
+    context_switch_overhead: 0.05
+    human_decision_points_per_day: 10
+    system_uptime: 0.9995
+    
+  value_creation:
+    leverage_multiplication: 1x-10000x
+    decision_quality_improvement: 0.85
+    work_life_integration_score: 4.5
+    customer_satisfaction: 4.5
+    
+  personal_optimization:
+    goal_achievement_rate: 0.8
+    stress_reduction: measured
+    sleep_quality: improved
+    energy_optimization: tracked
+    relationship_quality: monitored
+
+roadmap:
+  2025:
+    q3:
+      - Complete Phase 2 implementation
+      - Full Home Assistant OS integration
+      - Apple ecosystem optimization
+      - Initial enterprise deployments
+    q4:
+      - Security score 10/10 achievement
+      - Complete life-work synthesis
+      - Enterprise-grade multi-tenancy
+      - Global edge deployment
+      
+  long_term_2026_2030:
+    market_expansion:
+      - MOSAIC as industry standard for organizational AI
+      - Global enterprise adoption
+      - Educational institution partnerships
+      - Government sector implementations
+    technology_evolution:
+      - Advanced AI persona coordination
+      - Quantum computing integration
+      - Brain-computer interface exploration
+      - Augmented reality context delivery
+    social_impact:
+      - Work-life balance revolution
+      - Mental health improvement through ambient intelligence
+      - Productivity gains leading to reduced work hours
+      - Technology serving human flourishing
+
+project_relationships:
+  unified_alias_damn:
+    purpose: Practical implementation laboratory for MOSAIC concepts
+    technology_alignment:
+      - Next.js 15 + React 19 matches MOSAIC frontend stack
+      - Tailwind CSS + shadcn/ui for consistent design system
+      - Real-time features as foundation for context synchronization
+      - Dashboard architecture as prototype for MOSAIC interfaces
+    conceptual_bridges:
+      real_time_dashboard: PULSE-LC system monitoring
+      visualizations_3d: Context visualization patterns
+      component_architecture: MOSAIC module design
+      performance_metrics: System health monitoring
+    evolution_path:
+      - Extract reusable patterns from alias-aeos
+      - Implement core MOSAIC lifecycles
+      - Integrate Home Assistant OS layer
+      - Deploy cross-platform with ReNative
+
+knowledge_repository:
+  documentation_hierarchy:
+    root: /ALIAS/
+    constitutional_documents:
+      - MOSAIC-UNIVERSAL-FRAMEWORK.md
+      - MOSAIC-TECHNICAL-ARCHITECTURE.md
+      - MOSAIC-LIFECYCLE-SPECIFICATIONS.md
+      - LIFE-WORK-SYNTHESIS-ARCHITECTURE.md
+      - VALUE-OPTIMIZATION-FRAMEWORK.md
+      - alias_master_context.md
+  implementation_structure:
+    root: /MOSAIC/
+    directories:
+      - shared/types.ts: Core type definitions
+      - "[lifecycle-name]/index.ts": Lifecycle implementations
+      - infrastructure/: Event bus and context store
+      - cli/: Management tools
+      - docs/: Complete implementation guide
+
+metadata:
+  version: "1.0"
+  created: "2025-08-04"
+  format: YAML
+  purpose: Machine-readable ALIAS knowledge representation
+  copyright: "© 2025 ALIAS Organization. All Rights Reserved."

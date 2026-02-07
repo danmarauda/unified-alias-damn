@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "morph": {
+      "url": "http://localhost:3684/mcp"
+    }
+  }
+}

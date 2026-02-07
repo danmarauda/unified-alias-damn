@@ -1,0 +1,37 @@
+/**
+ * WorkOS AuthKit Middleware
+ *
+ * This middleware handles authentication for the entire application using WorkOS AuthKit.
+ * It automatically protects routes and redirects unauthenticated users to the login page.
+ *
+ * Public routes (accessible without authentication):
+ * - / (home page)
+ * - /login (login initiation)
+ * - /callback (OAuth callback handler)
+ */
+
+import { authkitMiddleware } from "@workos-inc/authkit-nextjs";
+
+export default authkitMiddleware({
+  // Enable middleware-level authentication checks
+  middlewareAuth: {
+    enabled: true,
+    // Routes that don't require authentication
+    // Home page uses client-side auth only (useAuth hook in Header)
+    // Server-side withAuth() is only needed for protected pages
+    unauthenticatedPaths: ["/", "/login", "/callback"],
+  },
+});
+
+/**
+ * Matcher configuration
+ *
+ * Run middleware on all routes except:
+ * - Static files (_next/static/*)
+ * - Image optimization (_next/image/*)
+ * - Favicon (favicon.ico)
+ * - Public folder (public/*)
+ */
+export const config = {
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|public/).*)"],
+};

@@ -1,0 +1,136 @@
+%% ALIAS MOSAIC - Domain Context Map
+%% Generated: 2025-11-27 | Turn 0 - Forensic Analysis
+%% Shows bounded contexts, relationships, and integration patterns
+
+graph TB
+    subgraph Identity["Identity Context"]
+        direction TB
+        Auth["Authentication<br/>(WorkOS)"]
+        Users["User Management"]
+        Session["Session Handling"]
+        
+        Auth --> Users
+        Auth --> Session
+    end
+
+    subgraph AgentOrchestration["Agent Orchestration Context"]
+        direction TB
+        Squadrons["Squadron Management<br/>(3 × 9 agents)"]
+        UCE["UCE Neural Network<br/>(35 neurons)"]
+        AgentMetrics["Agent Metrics"]
+        AgentDesigner["Agent Designer"]
+        AgentLibrary["Agent Library"]
+        
+        Squadrons --> UCE
+        Squadrons --> AgentMetrics
+        AgentDesigner --> AgentLibrary
+    end
+
+    subgraph Observability["Observability Context"]
+        direction TB
+        EventStream["Event Stream"]
+        CostTracking["Cost Tracking"]
+        NeuralViz["Neural Visualization"]
+        SquadronDash["Squadron Dashboard"]
+        
+        EventStream --> CostTracking
+        UCE -.-> NeuralViz
+        Squadrons -.-> SquadronDash
+    end
+
+    subgraph ProjectManagement["Project Management Context"]
+        direction TB
+        Projects["Projects"]
+        Activities["Project Activities"]
+        Timeline["Timeline"]
+        GlobeViz["Globe Visualization"]
+        
+        Projects --> Activities
+        Activities --> GlobeViz
+    end
+
+    subgraph KnowledgeManagement["Knowledge Management Context"]
+        direction TB
+        Ontology["Ontology Editor"]
+        KnowledgeBase["Knowledge Base"]
+        Collaboration["Real-time Collaboration"]
+        
+        Ontology --> KnowledgeBase
+        Ontology --> Collaboration
+    end
+
+    subgraph ClientResearch["Client Research Context"]
+        direction TB
+        ClientProfiles["Client Profiles"]
+        Research["Research Hub"]
+        QAWorkflow["QA Workflow"]
+        
+        ClientProfiles --> Research
+        Research --> QAWorkflow
+    end
+
+    subgraph SkillsManagement["Skills Management Context"]
+        direction TB
+        SkillLibrary["Skill Library"]
+        SkillBuilder["Skill Builder"]
+        SkillVersions["Skill Versions"]
+        SkillSeeker["Skill Seeker<br/>(External Tool)"]
+        
+        SkillBuilder --> SkillLibrary
+        SkillLibrary --> SkillVersions
+        SkillSeeker -.-> SkillLibrary
+    end
+
+    subgraph AIServices["AI Services Context"]
+        direction TB
+        LLMRouter["LLM Router"]
+        MultiProvider["Multi-Provider<br/>(15 providers)"]
+        ToolUse["Tool Use"]
+        Streaming["Streaming"]
+        
+        LLMRouter --> MultiProvider
+        LLMRouter --> ToolUse
+        LLMRouter --> Streaming
+    end
+
+    subgraph Infrastructure["Shared Infrastructure"]
+        direction TB
+        Convex["Convex<br/>(Real-time DB)"]
+        NextJS["Next.js 16<br/>(App Router)"]
+        DesignSystem["Design System<br/>(shadcn/ui)"]
+    end
+
+    %% Context Relationships
+    Identity ==>"Upstream"==> AgentOrchestration
+    Identity ==>"Upstream"==> ProjectManagement
+    Identity ==>"Upstream"==> ClientResearch
+    Identity ==>"Upstream"==> SkillsManagement
+
+    AgentOrchestration ==>"Published Events"==> Observability
+    AgentOrchestration ==>"Consumes"==> AIServices
+
+    KnowledgeManagement ==>"Shared Kernel"==> ProjectManagement
+    ClientResearch ==>"Conformist"==> KnowledgeManagement
+
+    SkillsManagement -.->|"Enriches"| AgentOrchestration
+
+    %% Infrastructure Relationships
+    Convex -.-> Identity
+    Convex -.-> AgentOrchestration
+    Convex -.-> Observability
+    Convex -.-> ProjectManagement
+    Convex -.-> KnowledgeManagement
+    Convex -.-> ClientResearch
+    Convex -.-> SkillsManagement
+
+    %% Styling
+    classDef core fill:#3060D1,stroke:#333,color:#fff
+    classDef support fill:#5A7DE9,stroke:#333,color:#fff
+    classDef external fill:#95afc0,stroke:#333
+    classDef infra fill:#2d3436,stroke:#333,color:#fff
+
+    class Identity,AgentOrchestration core
+    class Observability,ProjectManagement,KnowledgeManagement,ClientResearch,SkillsManagement support
+    class AIServices external
+    class Infrastructure infra
+

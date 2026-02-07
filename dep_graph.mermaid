@@ -1,0 +1,149 @@
+%% ALIAS MOSAIC Dependency Graph
+%% Generated: 2025-11-27 | Turn 0 - Forensic Analysis
+
+graph LR
+    subgraph App["Next.js App Router"]
+        subgraph Pages["src/app"]
+            Home["/ (page.tsx)"]
+            Dashboard["dashboard/"]
+            Agents["agents/"]
+            Projects["projects/"]
+            Ontology["ontology/"]
+            Research["research-hub/"]
+            Clients["client-profiles/"]
+            Skills["skills/"]
+            AI["ai-demo/"]
+            Observability["observability/"]
+            Deploy["deploy/"]
+            Profile["profile/"]
+        end
+    end
+
+    subgraph Components["src/components"]
+        subgraph Layout["layout/"]
+            MainLayout["MainLayout"]
+            Header["Header<br/>343 LOC"]
+            Footer["Footer"]
+        end
+        
+        subgraph DashboardComp["dashboard/"]
+            NetworkOverview["NetworkOverview"]
+            ProjectsSummary["ProjectsSummary"]
+            LiveFeed["LiveFeed"]
+            AgentActivities["AgentActivities"]
+            Leaderboard["Leaderboard"]
+        end
+        
+        subgraph UI["ui/"]
+            Button["button"]
+            Card["card"]
+            Tabs["tabs"]
+            Input["input"]
+            Globe["Globe<br/>Three.js"]
+        end
+        
+        subgraph Feature["Feature Components"]
+            OntologyViz["OntologyVisualizer<br/>568 LOC"]
+            CollabOntology["CollaborativeOntologyVisualizer"]
+            SkillBuilder["skill-builder<br/>434 LOC"]
+            SkillsManager["skills-manager"]
+            ResearchHub["ResearchHubClient"]
+            NeuralNet["NeuralNetworkViz"]
+        end
+    end
+
+    subgraph Lib["src/lib"]
+        Utils["utils.ts"]
+        Config["config.ts"]
+        Session["session.ts"]
+        WorkOS["workos.ts"]
+        WorkOSServer["workos-server.ts"]
+        
+        subgraph Hooks["hooks/"]
+            UseAuth["use-auth"]
+            UseStats["use-stats"]
+            UseAgentMetrics["use-agent-metrics"]
+            UseWorkOS["use-work-os"]
+        end
+    end
+
+    subgraph Convex["Convex Backend"]
+        Schema["schema.ts<br/>16 tables"]
+        
+        subgraph Functions["Functions"]
+            Users["users.ts"]
+            Stats["stats.ts"]
+            AgentMetrics["agentMetrics.ts"]
+            ClientProfiles["clientProfiles.ts"]
+            ClientResearch["clientResearch.ts"]
+            Skills["skills.ts"]
+            SkillsMut["skills_mutations.ts"]
+            ObservabilityFn["observability.ts<br/>532 LOC"]
+            HTTP["http.ts<br/>340 LOC"]
+            InitDemo["initDemo.ts"]
+        end
+    end
+
+    subgraph External["External Services"]
+        WorkOSAuth["WorkOS AuthKit"]
+        AIProviders["AI SDK v6<br/>15 Providers"]
+        ConvexCloud["Convex Cloud"]
+    end
+
+    %% Page → Component Dependencies
+    Home --> MainLayout
+    Home --> NetworkOverview
+    Home --> ProjectsSummary
+    Home --> LiveFeed
+    Home --> AgentActivities
+    
+    Agents --> MainLayout
+    Agents --> UseAgentMetrics
+    
+    Ontology --> OntologyViz
+    Ontology --> CollabOntology
+    
+    Skills --> SkillBuilder
+    Skills --> SkillsManager
+    
+    Research --> ResearchHub
+    
+    Observability --> NeuralNet
+    
+    %% Component → UI Dependencies
+    MainLayout --> Header
+    MainLayout --> Footer
+    Header --> Button
+    Header --> UseWorkOS
+    
+    NetworkOverview --> Card
+    NetworkOverview --> Globe
+    
+    %% Hook → Convex Dependencies
+    UseStats --> Stats
+    UseAgentMetrics --> AgentMetrics
+    UseAuth --> WorkOS
+    
+    %% Auth Flow
+    Header --> WorkOSAuth
+    Profile --> UseAuth
+    
+    %% Convex Dependencies
+    ClientResearch --> ClientProfiles
+    SkillsMut --> Skills
+    HTTP --> ObservabilityFn
+    
+    %% External
+    Users --> WorkOSAuth
+    AI --> AIProviders
+    Schema --> ConvexCloud
+
+    %% Styling
+    classDef hotspot fill:#ff6b6b,stroke:#333,color:#fff
+    classDef feature fill:#4ecdc4,stroke:#333
+    classDef external fill:#95afc0,stroke:#333
+    
+    class Header,OntologyViz,SkillBuilder,ObservabilityFn hotspot
+    class NetworkOverview,Globe,NeuralNet feature
+    class WorkOSAuth,AIProviders,ConvexCloud external
+

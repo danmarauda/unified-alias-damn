@@ -1,0 +1,224 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - heading "🧠 ALIAS Hivemind V3 Observability" [level=1] [ref=e6]
+          - paragraph [ref=e7]: Real-time monitoring for BIG 3 SUPER AGENT (Voice + Browser + Multi-LLM)
+        - generic [ref=e11]: Live
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - generic [ref=e15]: 🔗
+          - combobox [ref=e16]:
+            - option "All Sessions" [selected]
+        - generic [ref=e17]:
+          - generic [ref=e18]: 📱
+          - combobox [ref=e19]:
+            - option "All Sources" [selected]
+        - generic [ref=e20]:
+          - generic [ref=e21]: 🎯
+          - combobox [ref=e22]:
+            - option "All Types" [selected]
+        - generic [ref=e23]:
+          - generic [ref=e24]: 🚀
+          - combobox [ref=e25]:
+            - option "All Squadrons" [selected]
+        - generic [ref=e26]:
+          - generic [ref=e27]: 📊
+          - combobox [ref=e28]:
+            - option "All Statuses" [selected]
+    - main [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e33]:
+            - heading "Event Timeline" [level=3] [ref=e34]
+            - paragraph [ref=e35]: Real-time event stream
+          - generic [ref=e37]:
+            - generic [ref=e38]: 📡
+            - paragraph [ref=e39]: No events yet
+            - paragraph [ref=e40]: Events will appear here in real-time
+        - generic [ref=e41]:
+          - generic [ref=e43]:
+            - heading "Cost Tracking" [level=3] [ref=e44]
+            - paragraph [ref=e45]: LLM cost breakdown
+          - generic [ref=e47]:
+            - generic [ref=e48]: 💰
+            - paragraph [ref=e49]: No cost data yet
+            - paragraph [ref=e50]: LLM costs will appear here
+      - generic [ref=e52]:
+        - generic [ref=e54]:
+          - heading "Squadron Status" [level=3] [ref=e55]
+          - paragraph [ref=e56]: 27 agents across 3 squadrons
+        - generic [ref=e58]:
+          - generic [ref=e59]: 🚀
+          - paragraph [ref=e60]: No squadron data yet
+      - generic [ref=e62]:
+        - generic [ref=e64]:
+          - heading "UCE Neural Network" [level=3] [ref=e65]
+          - paragraph [ref=e66]: 35 neurons across 6 layers
+        - generic [ref=e68]:
+          - generic [ref=e69]:
+            - generic [ref=e70]:
+              - generic [ref=e71]: 🧠
+              - generic [ref=e72]:
+                - generic [ref=e73]: "35"
+                - generic [ref=e74]: Total Neurons
+            - generic [ref=e75]:
+              - generic [ref=e76]: ⚡
+              - generic [ref=e77]:
+                - generic [ref=e78]: "0"
+                - generic [ref=e79]: Active Neurons
+            - generic [ref=e80]:
+              - generic [ref=e81]: 📊
+              - generic [ref=e82]:
+                - generic [ref=e83]: 0.0%
+                - generic [ref=e84]: Activation Rate
+          - generic [ref=e86]:
+            - generic [ref=e87]:
+              - heading "Voice Layer (5 neurons)" [level=4] [ref=e88]
+              - generic [ref=e89]:
+                - 'generic "voice-intent-recognition: 0.0%" [ref=e90]':
+                  - generic [ref=e91]: 0%
+                  - generic [ref=e92]: voice-intent-recognition
+                - 'generic "speech-to-text-quality: 0.0%" [ref=e93]':
+                  - generic [ref=e94]: 0%
+                  - generic [ref=e95]: speech-to-text-quality
+                - 'generic "voice-command-parsing: 0.0%" [ref=e96]':
+                  - generic [ref=e97]: 0%
+                  - generic [ref=e98]: voice-command-parsing
+                - 'generic "audio-noise-filtering: 0.0%" [ref=e99]':
+                  - generic [ref=e100]: 0%
+                  - generic [ref=e101]: audio-noise-filtering
+                - 'generic "voice-emotion-detection: 0.0%" [ref=e102]':
+                  - generic [ref=e103]: 0%
+                  - generic [ref=e104]: voice-emotion-detection
+            - generic [ref=e105]:
+              - heading "Browser Layer (5 neurons)" [level=4] [ref=e106]
+              - generic [ref=e107]:
+                - 'generic "browser-state-tracking: 0.0%" [ref=e108]':
+                  - generic [ref=e109]: 0%
+                  - generic [ref=e110]: browser-state-tracking
+                - 'generic "dom-manipulation-safety: 0.0%" [ref=e111]':
+                  - generic [ref=e112]: 0%
+                  - generic [ref=e113]: dom-manipulation-safety
+                - 'generic "screenshot-analysis: 0.0%" [ref=e114]':
+                  - generic [ref=e115]: 0%
+                  - generic [ref=e116]: screenshot-analysis
+                - 'generic "element-detection: 0.0%" [ref=e117]':
+                  - generic [ref=e118]: 0%
+                  - generic [ref=e119]: element-detection
+                - 'generic "page-load-timing: 0.0%" [ref=e120]':
+                  - generic [ref=e121]: 0%
+                  - generic [ref=e122]: page-load-timing
+            - generic [ref=e123]:
+              - heading "LLM Layer (5 neurons)" [level=4] [ref=e124]
+              - generic [ref=e125]:
+                - 'generic "multi-llm-coordination: 0.0%" [ref=e126]':
+                  - generic [ref=e127]: 0%
+                  - generic [ref=e128]: multi-llm-coordination
+                - 'generic "cost-optimization: 0.0%" [ref=e129]':
+                  - generic [ref=e130]: 0%
+                  - generic [ref=e131]: cost-optimization
+                - 'generic "latency-monitoring: 0.0%" [ref=e132]':
+                  - generic [ref=e133]: 0%
+                  - generic [ref=e134]: latency-monitoring
+                - 'generic "context-window-management: 0.0%" [ref=e135]':
+                  - generic [ref=e136]: 0%
+                  - generic [ref=e137]: context-window-management
+                - 'generic "response-quality-scoring: 0.0%" [ref=e138]':
+                  - generic [ref=e139]: 0%
+                  - generic [ref=e140]: response-quality-scoring
+            - generic [ref=e141]:
+              - heading "Agents Layer (5 neurons)" [level=4] [ref=e142]
+              - generic [ref=e143]:
+                - 'generic "agent-lifecycle-management: 0.0%" [ref=e144]':
+                  - generic [ref=e145]: 0%
+                  - generic [ref=e146]: agent-lifecycle-management
+                - 'generic "task-decomposition: 0.0%" [ref=e147]':
+                  - generic [ref=e148]: 0%
+                  - generic [ref=e149]: task-decomposition
+                - 'generic "squadron-coordination: 0.0%" [ref=e150]':
+                  - generic [ref=e151]: 0%
+                  - generic [ref=e152]: squadron-coordination
+                - 'generic "memory-sharing: 0.0%" [ref=e153]':
+                  - generic [ref=e154]: 0%
+                  - generic [ref=e155]: memory-sharing
+                - 'generic "conflict-resolution: 0.0%" [ref=e156]':
+                  - generic [ref=e157]: 0%
+                  - generic [ref=e158]: conflict-resolution
+            - generic [ref=e159]:
+              - heading "Core Layer (9 neurons)" [level=4] [ref=e160]
+              - generic [ref=e161]:
+                - 'generic "pattern-recognition: 0.0%" [ref=e162]':
+                  - generic [ref=e163]: 0%
+                  - generic [ref=e164]: pattern-recognition
+                - 'generic "error-detection: 0.0%" [ref=e165]':
+                  - generic [ref=e166]: 0%
+                  - generic [ref=e167]: error-detection
+                - 'generic "performance-monitoring: 0.0%" [ref=e168]':
+                  - generic [ref=e169]: 0%
+                  - generic [ref=e170]: performance-monitoring
+                - 'generic "security-validation: 0.0%" [ref=e171]':
+                  - generic [ref=e172]: 0%
+                  - generic [ref=e173]: security-validation
+                - 'generic "data-flow-tracking: 0.0%" [ref=e174]':
+                  - generic [ref=e175]: 0%
+                  - generic [ref=e176]: data-flow-tracking
+                - 'generic "adaptive-learning: 0.0%" [ref=e177]':
+                  - generic [ref=e178]: 0%
+                  - generic [ref=e179]: adaptive-learning
+                - 'generic "context-maintenance: 0.0%" [ref=e180]':
+                  - generic [ref=e181]: 0%
+                  - generic [ref=e182]: context-maintenance
+                - 'generic "task-prioritization: 0.0%" [ref=e183]':
+                  - generic [ref=e184]: 0%
+                  - generic [ref=e185]: task-prioritization
+                - 'generic "resource-allocation: 0.0%" [ref=e186]':
+                  - generic [ref=e187]: 0%
+                  - generic [ref=e188]: resource-allocation
+            - generic [ref=e189]:
+              - heading "Integration Layer (6 neurons)" [level=4] [ref=e190]
+              - generic [ref=e191]:
+                - 'generic "cross-system-sync: 0.0%" [ref=e192]':
+                  - generic [ref=e193]: 0%
+                  - generic [ref=e194]: cross-system-sync
+                - 'generic "event-correlation: 0.0%" [ref=e195]':
+                  - generic [ref=e196]: 0%
+                  - generic [ref=e197]: event-correlation
+                - 'generic "metric-aggregation: 0.0%" [ref=e198]':
+                  - generic [ref=e199]: 0%
+                  - generic [ref=e200]: metric-aggregation
+                - 'generic "anomaly-detection: 0.0%" [ref=e201]':
+                  - generic [ref=e202]: 0%
+                  - generic [ref=e203]: anomaly-detection
+                - 'generic "feedback-loop-processing: 0.0%" [ref=e204]':
+                  - generic [ref=e205]: 0%
+                  - generic [ref=e206]: feedback-loop-processing
+                - 'generic "orchestration-control: 0.0%" [ref=e207]':
+                  - generic [ref=e208]: 0%
+                  - generic [ref=e209]: orchestration-control
+          - generic [ref=e210]:
+            - generic [ref=e213]: Inactive (0%)
+            - generic [ref=e216]: Low (40%)
+            - generic [ref=e219]: Medium (70%)
+            - generic [ref=e222]: High (100%)
+    - contentinfo [ref=e223]:
+      - generic [ref=e224]:
+        - generic [ref=e225]:
+          - generic [ref=e226]: 💡 Multi-LLM routing saves 70% on costs
+          - generic [ref=e227]: 🚀 27 agents coordinated across 3 squadrons
+          - generic [ref=e228]: 🧠 35 UCE neurons for intelligent orchestration
+        - generic [ref=e229]:
+          - generic [ref=e230]: Powered by
+          - link "Convex" [ref=e231] [cursor=pointer]:
+            - /url: https://www.convex.dev
+          - generic [ref=e232]: +
+          - link "Reaviz" [ref=e233] [cursor=pointer]:
+            - /url: https://reaviz.io
+  - button "Open Next.js Dev Tools" [ref=e239] [cursor=pointer]:
+    - img [ref=e240]
+  - alert [ref=e243]
+```
